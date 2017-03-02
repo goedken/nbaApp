@@ -4,3 +4,8 @@
   float: left;
   padding-right: 10px;
 }
+
+.player-headshot {
+  height: auto;
+  width: 100%;
+}

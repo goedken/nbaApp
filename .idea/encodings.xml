@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$USER_HOME$/Documents/CS407/RockPaperScissors_lab2/RockPaperScissors_lab2/www/js/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gulpfile.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/css/style.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/js/app.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/js/controllers.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/js/services.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/templates/player-detail.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/www/templates/tab-dash.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/templates/tab-players.html" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/www/templates/tabs.html" charset="UTF-8" />
   </component>

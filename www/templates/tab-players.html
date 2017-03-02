@@ -1,16 +1,29 @@
 <ion-view view-title="Players">
   <ion-content>
+    <!--<ion-list>-->
+    <!--<ion-item class="item-remove-animate item-icon-right" ng-repeat="player in players | orderBy: 'number'"-->
+    <!--type="item-text-wrap" ui-sref="tab.player-detail({ playerId: player.id })"">-->
+    <!--<img class="player-avatar" ng-src="img/{{player.image_name}}">-->
+    <!--<h2>{{player.name}}</h2>-->
+    <!--<p>{{player.team}}</p>-->
+    <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+
+    <!--&lt;!&ndash;<ion-option-button class="button-assertive" ng-click="remove(chat)">&ndash;&gt;-->
+    <!--&lt;!&ndash;Delete&ndash;&gt;-->
+    <!--&lt;!&ndash;</ion-option-button>&ndash;&gt;-->
+    <!--</ion-item>-->
+    <!--</ion-list>-->
     <ion-list>
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="player in players"
-                type="item-text-wrap" href="#/tab/players/{{player.id}}">
-        <img class="player-avatar" ng-src="img/{{player.image_name}}">
-        <h2>{{player.name}}</h2>
-        <p>{{player.team}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+                type="item-text-wrap" ui-sref="tab.player-detail({ playerId: player.person_id })">
+      <h2>{{player.display_first_last}}</h2>
 
-        <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
-          <!--Delete-->
-        <!--</ion-option-button>-->
+      <p>{{player.team_city}} {{player.team_name}}</p>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+
+      <!--<ion-option-button class="button-assertive" ng-click="remove(chat)">-->
+      <!--Delete-->
+      <!--</ion-option-button>-->
       </ion-item>
     </ion-list>
   </ion-content>

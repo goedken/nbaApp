@@ -11,23 +11,74 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-    $http.get('../players.json').success(function(data) {
-      $scope.players = data;
+    //$http.get('../players.json').success(function(data) {
+    //  $scope.players = data;
+    //});
+
+    Players.success(function(data) {
+      $scope.players = [];
+      $scope.playersUnparsed= data;
+      //console.log($scope.playersUnparsed);
+      for(var i = 0; i < $scope.playersUnparsed.length; i++) {
+        var player = JSON.parse($scope.playersUnparsed[i]);
+        //console.log(player);
+
+        //for(var attr in player) {
+        //  if(player.hasOwnProperty(attr)) {
+        //    if(attr.includes('RANK')) {
+        //      delete player[attr];
+        //    } else {
+        //      player[attr] = player[attr][0];
+        //      var newAttr = attr.toLowerCase();
+        //      player[newAttr] = player[attr];
+        //      delete player[attr];
+        //    }
+        //
+        //    //console.log(attr);
+        //  }
+        //}
+
+        //console.log(player);
+
+        $scope.players.push(player);
+      };
+
+
+      console.log($scope.players)
     });
 
+
+
+    //$scope.players = Players.content;
+
     //$scope.players = Players.all();
-    console.log($scope.players);
+    //console.log($scope.players);
 })
 
 .controller('PlayerDetailCtrl', function($scope, $http, Players, $stateParams) {
     //$scope.player = Players.get($stateParams.playerId);
 
     var players;
+    // Players.content;
+    //for (var i = 0; i < players.length; i++) {
+    //  if (players[i].id === parseInt($stateParams.playerId)) {
+    //    $scope.player = players[i];
+    //  }
+    //}
 
-    $http.get('../players.json').success(function(data) {
+    //$http.get('../players.json').success(function(data) {
+    //  players = data;
+    //  for (var i = 0; i < players.length; i++) {
+    //    if (players[i].id === parseInt($stateParams.playerId)) {
+    //      $scope.player = players[i];
+    //    }
+    //  }
+    //});
+
+    Players.success(function(data) {
       players = data;
       for (var i = 0; i < players.length; i++) {
-        if (players[i].id === parseInt($stateParams.playerId)) {
+        if (players[i].person_id === parseInt($stateParams.playerId)) {
           $scope.player = players[i];
         }
       }
