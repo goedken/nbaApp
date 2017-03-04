@@ -5,9 +5,46 @@
   The Friends service returns an array of friend data
 -->
 <ion-view>
-  <ion-nav-title>{{player.display_first_last}}</ion-nav-title>
+  <ion-nav-title>{{player.player_name}}</ion-nav-title>
   <ion-content class="padding">
-    {{player}}
+    <div class="row">
+      <div class="col-33">
+        <img class="player-headshot" ng-src="img/pic{{player.picture_id}}.jpg">
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col text-center"><strong>{{player.team_abbreviation}}</strong> | #{{player.number}} | {{player.position}}</div>
+        </div>
+        <div class="row">
+          <div class="col text-center">{{player.age}} years old | {{player.height}} | {{player.weight}}</div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row header text-center">
+      <div class="col"><strong>MPG</strong></div>
+      <div class="col"><strong>ORTG</strong></div>
+      <div class="col"><strong>DRTG</strong></div>
+      <div class="col"><strong>NET</strong></div>
+      <div class="col"><strong>AST%</strong></div>
+      <div class="col"><strong>REB%</strong></div>
+      <div class="col"><strong>EFG%</strong></div>
+      <div class="col"><strong>TS%</strong></div>
+      <div class="col"><strong>USG%</strong></div>
+      <div class="col"><strong>PACE</strong></div>
+    </div>
+    <div class="row text-center">
+      <div class="col">{{player.min}}</div>
+      <div class="col">{{player.off_rating}}</div>
+      <div class="col">{{player.def_rating}}</div>
+      <div class="col">{{player.net_rating}}</div>
+      <div class="col">{{player.ast_pct}}</div>
+      <div class="col">{{player.reb_pct}}</div>
+      <div class="col">{{player.efg_pct}}</div>
+      <div class="col">{{player.ts_pct}}</div>
+      <div class="col">{{player.usg_pct}}</div>
+      <div class="col">{{player.pace}}</div>
+    </div>
   </ion-content>
 </ion-view>
 

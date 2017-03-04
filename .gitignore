@@ -6,4 +6,4 @@ platforms/
 plugins/
 *.txt
 *.jpg
-*.json
+www/players.json

@@ -15,36 +15,50 @@ angular.module('starter.controllers', [])
     //  $scope.players = data;
     //});
 
+    $scope.listlength = 50;
+
+    $scope.loadMore = function(){
+      if(!$scope.players){
+        $scope.$broadcast('scroll.infiniteScrollComplete');
+        return;
+      }
+
+      if($scope.listlength < $scope.players.length) {
+        $scope.listlength += 20;
+      }
+      $scope.$broadcast('scroll.infiniteScrollComplete');
+    };
+
     Players.success(function(data) {
       $scope.players = [];
-      $scope.playersUnparsed= data;
+      $scope.players = data;
       //console.log($scope.playersUnparsed);
-      for(var i = 0; i < $scope.playersUnparsed.length; i++) {
-        var player = JSON.parse($scope.playersUnparsed[i]);
-        //console.log(player);
+      //for(var i = 0; i < $scope.playersUnparsed.length; i++) {
+      //  var player = JSON.parse($scope.playersUnparsed[i]);
+      //  //console.log(player);
+      //
+      //  //for(var attr in player) {
+      //  //  if(player.hasOwnProperty(attr)) {
+      //  //    if(attr.includes('RANK')) {
+      //  //      delete player[attr];
+      //  //    } else {
+      //  //      player[attr] = player[attr][0];
+      //  //      var newAttr = attr.toLowerCase();
+      //  //      player[newAttr] = player[attr];
+      //  //      delete player[attr];
+      //  //    }
+      //  //
+      //  //    //console.log(attr);
+      //  //  }
+      //  //}
+      //
+      //  //console.log(player);
+      //
+      //  $scope.players.push(player);
+      //};
 
-        //for(var attr in player) {
-        //  if(player.hasOwnProperty(attr)) {
-        //    if(attr.includes('RANK')) {
-        //      delete player[attr];
-        //    } else {
-        //      player[attr] = player[attr][0];
-        //      var newAttr = attr.toLowerCase();
-        //      player[newAttr] = player[attr];
-        //      delete player[attr];
-        //    }
-        //
-        //    //console.log(attr);
-        //  }
-        //}
 
-        //console.log(player);
-
-        $scope.players.push(player);
-      };
-
-
-      console.log($scope.players)
+      //console.log($scope.players)
     });
 
 
@@ -78,7 +92,7 @@ angular.module('starter.controllers', [])
     Players.success(function(data) {
       players = data;
       for (var i = 0; i < players.length; i++) {
-        if (players[i].person_id === parseInt($stateParams.playerId)) {
+        if (players[i].player_id === parseInt($stateParams.playerId)) {
           $scope.player = players[i];
         }
       }

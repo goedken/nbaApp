@@ -4,5 +4,5 @@ angular.module('starter.services', [])
 
     //return $http.get('../players.json');
 
-    return $http.get('../listofplayers.json')
+    return $http.get('../players.json')
 });
